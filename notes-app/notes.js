@@ -6,7 +6,8 @@ const getNotes = function () {
 
 // job is to save notes to data store
 const addNote = function (title, body) {
-    
+    const notes = loadNotes();
+    console.log(notes);
 }
 
 // function for removing notes
@@ -18,9 +19,9 @@ const loadNotes = function () {
         const dataJSON = dataBuffer.toString();
         // parse the string
         return JSON.parse(dataJSON);
-    }        
     } catch (e) {
-        
+        // if no notes.json
+        return []; 
     }
 }
 
