@@ -13,10 +13,18 @@ const addNote = function (title, body) {
         body: body
     });
 
-    console.log(notes);
+    saveNotes(notes);
 }
 
-// function for removing notes
+// -------- helper functions ----------
+// convert notes to strings, store in dataJSON, write to notes.json file
+// what is written? Whatever is stored in the dataJSON file
+const saveNotes = function (notes) {
+    dataJSON = JSON.stringify(notes);
+    fs.writeFileSync('notes.json', dataJSON);
+}
+
+// function for loading notes
 const loadNotes = function () {
     // if any of 3 cases fail
     try {
