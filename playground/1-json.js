@@ -9,3 +9,4 @@ const fs = require('fs');
 
 // calling dataBuffer bc return is not a string, but a buffer
 const dataBuffer = fs.readFileSync('1-json.json', );
+console.log(dataBuffer);
