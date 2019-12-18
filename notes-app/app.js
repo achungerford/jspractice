@@ -21,7 +21,7 @@ yargs.command({
     },
     handler: function (argv) {
         // title property matches up with above title property
-        console.log('Title; ' + argv.title);
+        console.log('Title: ' + argv.title);
     }
 })
 
