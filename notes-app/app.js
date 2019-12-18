@@ -11,17 +11,25 @@ yargs.command({
     command: 'add',
     describe: 'Add a new note',
     builder: {
+        // note title
         title: {
             describe: 'Note title',
             // requiring the property
             demandOption: true,
             // title must be a string
             type: 'string'
+        },
+        // note body
+        body: {
+            desc: 'Note body',
+            demandOption: true,
+            type: 'string',
         }
     },
     handler: function (argv) {
         // title property matches up with above title property
         console.log('Title: ' + argv.title);
+        console.log('Body: ' + argv.body);
     }
 })
 
