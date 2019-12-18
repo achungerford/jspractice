@@ -8,12 +8,29 @@ const getNotes = function () {
 const addNote = function (title, body) {
     const notes = loadNotes();
 
-    notes.push({
-        title: title,
-        body: body
-    });
+    // prevent from using identical note title
+    const duplicateNotes = notes.filter(function (note) {
+        return note.title === title
+    })
 
-    saveNotes(notes);
+    /*
+        The return stmt on line 13 above will run 1x for each object
+        checking for identical titles already in notes.json file
+
+        If no duplicates found, returns false,
+        duplicateNotes will be an array of zero objects
+    */
+
+    if (duplicateNotes.length === 0) {
+        notes.push({
+            title: title,
+            body: body
+        });
+        saveNotes(notes);
+        console.log('New note added!');
+    } else {
+        console.log('Note title taken!');
+    }
 }
 
 // -------- helper functions ----------
