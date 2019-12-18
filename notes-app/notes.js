@@ -11,11 +11,17 @@ const addNote = function (title, body) {
 
 // function for removing notes
 const loadNotes = function () {
-    const dataBuffer = fs.readFileSync('notes.json');
-    // convert buffer into string
-    const dataJSON = dataBuffer.toString();
-    // parse the string
-    return JSON.parse(dataJSON);
+    // code in case notes.json file not present
+    try {
+        const dataBuffer = fs.readFileSync('notes.json');
+        // convert buffer into string
+        const dataJSON = dataBuffer.toString();
+        // parse the string
+        return JSON.parse(dataJSON);
+    }        
+    } catch (e) {
+        
+    }
 }
 
 // exports
