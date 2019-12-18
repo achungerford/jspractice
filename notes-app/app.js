@@ -20,8 +20,8 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        // placeholder
-        console.log('Adding a new note!', argv);
+        // title property matches up with above title property
+        console.log('Title; ' + argv.title);
     }
 })
 
