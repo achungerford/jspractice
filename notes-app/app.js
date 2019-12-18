@@ -13,7 +13,10 @@ yargs.command({
     builder: {
         title: {
             describe: 'Note title',
-            demandOption: true
+            // requiring the property
+            demandOption: true,
+            // title must be a string
+            type: 'string'
         }
     },
     handler: function (argv) {
