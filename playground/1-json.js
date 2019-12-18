@@ -13,3 +13,4 @@ const dataJSON = dataBuffer.toString();
 
 // parsing our saved dataJSON
 const data = JSON.parse(dataJSON);
+console.log(data.title);
