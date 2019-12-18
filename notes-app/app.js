@@ -15,8 +15,9 @@ yargs.command({
             describe: 'Note title'
         }
     },
-    handler: function () {
-        console.log('placeholder: Adding a new note!');
+    handler: function (argv) {
+        // placeholder
+        console.log('Adding a new note!', argv);
     }
 })
 
@@ -25,7 +26,8 @@ yargs.command({
     command: 'remove',
     describe: 'Remove a note',
     handler: function () {
-        console.log('placeholder: removing the note');
+        // placeholder
+        console.log('Removing the note');
     }
 })
 
@@ -34,6 +36,7 @@ yargs.command({
     command: 'list',
     describe: 'List the notes',
     handler: function () {
+        // placeholder
         console.log('placeholder: listing out all the notes');
     }
 })
@@ -43,6 +46,7 @@ yargs.command({
     command: 'read',
     describe: 'Reads a note',
     handler: function () {
+        // placeholder
         console.log('placeholder: reading a note');
     }
 })
