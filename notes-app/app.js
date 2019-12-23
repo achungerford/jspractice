@@ -6,20 +6,16 @@ const notes = require('./notes.js');
 // customize yargs version
 yargs.version('1.1.0');
 
-// Create add command
+// Create add command, require title as string
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
     builder: {
-        // note title
         title: {
             describe: 'Note title',
-            // requiring the property
             demandOption: true,
-            // title must be a string
             type: 'string'
         },
-        // note body
         body: {
             desc: 'Note body',
             demandOption: true,
@@ -47,7 +43,7 @@ yargs.command({
     describe: 'List the notes',
     handler: function () {
         // placeholder
-        console.log('placeholder: listing out all the notes');
+        console.log('Listing out all the notes');
     }
 })
 
