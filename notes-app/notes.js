@@ -53,8 +53,8 @@ const loadNotes = function () {
     }    
 }
 
-const removeNote = function () {
-
+const removeNote = function (title) {
+    console.log('Removed note');
 }
 
 
