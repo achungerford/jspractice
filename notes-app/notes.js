@@ -4,57 +4,56 @@ const getNotes = function () {
     return 'Your notes...';
 }
 
-// job is to save notes to data store
+// for adding notes
 const addNote = function (title, body) {
+    // loading in previous notes
     const notes = loadNotes();
 
-    // prevent from using identical note title
+    // loop over notes and return if duplicate titles
     const duplicateNotes = notes.filter(function (note) {
-        return note.title === title
-    })
+        return note.title === title;
+    });
 
-    /*
-        The return stmt on line 13 above will run 1x for each object
-        checking for identical titles already in notes.json file
-
-        If no duplicates found, returns false,
-        duplicateNotes will be an array of zero objects
-    */
-
+    // if no duplicates, add the note
     if (duplicateNotes.length === 0) {
         notes.push({
             title: title,
             body: body
         });
         saveNotes(notes);
-        console.log('New note added!');
+        console.log('New note added');        
     } else {
         console.log('Note title taken!');
     }
 }
 
-// -------- helper functions ----------
-// convert notes to strings, store in dataJSON, write to notes.json file
-// what is written? Whatever is stored in the dataJSON file
+// for saving notes
 const saveNotes = function (notes) {
-    dataJSON = JSON.stringify(notes);
+    const dataJSON = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJSON);
 }
 
-// function for loading notes
+/*
+    When we add a note, we don't want to overwrite
+    previous notes so we first have to load in previous
+    notes. loadNotes() loads in past notes. We call it above.
+
+    Read in the data, saved in buffer format.
+    Convert buffer to strings, save as JSON.
+    Parse the JSON and return it as a note.
+*/
+
 const loadNotes = function () {
-    // if any of 3 cases fail
     try {
         const dataBuffer = fs.readFileSync('notes.json');
         const dataJSON = dataBuffer.toString();
         return JSON.parse(dataJSON);
     } catch (e) {
-        return []; 
-    }
+        return [];
+    }    
 }
 
-// exports
 module.exports = {
     getNotes: getNotes,
-    addNote: addNote
+    addNote: addNote,
 }
