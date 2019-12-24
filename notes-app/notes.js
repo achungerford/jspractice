@@ -53,7 +53,13 @@ const loadNotes = function () {
     }    
 }
 
+const removeNote = function () {
+
+}
+
+
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
+    removeNote: removeNote
 }
