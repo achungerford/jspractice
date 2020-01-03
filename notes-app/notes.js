@@ -54,7 +54,15 @@ const loadNotes = function () {
 }
 
 const removeNote = function (title) {
-    console.log(title);
+    const notes = loadNotes();
+
+    // looping over notes, find ones to be kept: keep-true, remove-false
+    const notesToKeep = notes.filter(function (note) {
+        return note.title !== title;
+    });
+
+    // save new array
+    saveNotes(notesToKeep);
 }
 
 
