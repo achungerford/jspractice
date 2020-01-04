@@ -71,8 +71,6 @@ const removeNote = function (title) {
     } else {
         console.log(chalk.red.inverse('No note found!'));
     }
-
-
 }
 
 
