@@ -12,7 +12,7 @@
 
 const event = {
     name: 'Birthday Party',
-    printGuestList: () => {
+    printGuestList: function () {
         console.log('Guest list for ' + this.name);
     }
 }
