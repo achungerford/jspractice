@@ -11,6 +11,12 @@ const addNote = (title, body) => {
     // loop over notes and return if duplicate titles
     const duplicateNotes = notes.filter((note) => note.title === title);
 
+    // using find() method stops the process of searching our array for
+    // duplicates as soon as a matching title is found to tell the user
+    // that title is already taken, rather than continuing through the rest
+    // of the array looking for duplicates that we know won't exist.
+    const duplicateNote = notes.find((note) => note.title === title);
+
     // if no duplicates, add the note
     if (duplicateNotes.length === 0) {
         notes.push({
