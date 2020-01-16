@@ -13,6 +13,8 @@ const addNote = (title, body) => {
     // of the array looking for duplicates that we know won't exist.
     const duplicateNote = notes.find((note) => note.title === title);
 
+    debugger
+
     // if no duplicates, add the note
     if (!duplicateNote) {
         notes.push({
@@ -92,7 +94,6 @@ const readNote = (title) => {
 }
 
 module.exports = {
-    getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
     listNotes: listNotes,
