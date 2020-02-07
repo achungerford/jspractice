@@ -6,7 +6,7 @@ require('dotenv').config();
 const api_key = process.env.API_KEY;
 
 // using the example API request
-const url = `https://api.darksky.net/forecast/${api_key}/37.8267,-122.4233`;
+const url = `https://api.darksky.net/forecast/${api_key}/37.8267,-122.4233?lang=es`;
 
 // making an http request 
 request({ url: url, json: true }, (error, response) => {
