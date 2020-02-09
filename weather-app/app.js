@@ -17,7 +17,9 @@ request({ url: url, json: true }, (error, response) => {
 // using the api to get lattitude & longitude
 const map_url = `https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=${map_api_key}&limit=1`;
 
-// http request for map API
+// http request for map API. Note that geocoordinates for lat/long are usually presented as [longitdue, lattitude].
 request({ url: map_url, json: true } , (error, response) => {
-    console.log('The lattitude and longitude of ' + response.body.features[0].text + ' is ' + response.body.features[0].center + '.');
+    const lattitude = response.body.features[0].center[1];
+    const longitude = response.body.features[0].center[0];
+    console.log(response.body.features[0].text + ' has a lattitude of ' + lattitude + ' and a longtitude of ' + longitude + '.');
 });
