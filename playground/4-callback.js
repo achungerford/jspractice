@@ -21,3 +21,6 @@ const geocode = (address, callback) => {
         longitude: 0
     }
 }
+
+const data = geocode('Philadelphia');
+console.log(data);
