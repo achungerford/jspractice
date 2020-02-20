@@ -22,9 +22,10 @@ const geocode = (address, callback) => {
             longitude: 0
         }
     
-        return data;
+        callback(data)
     }, 2000);
 }
 
-const data = geocode('Philadelphia');
-console.log(data);
+geocode('Philadelphia', (firstArgument) => {
+    console.log(firstArgument);
+});
