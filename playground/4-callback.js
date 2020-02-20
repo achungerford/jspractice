@@ -16,10 +16,14 @@ const shortNames = names.filter((name) => {
 
 // geocode example
 const geocode = (address, callback) => {
-    const data = {
-        latitude: 0,
-        longitude: 0
-    }
+    setTimeout(() => {
+        const data = {
+            latitude: 0,
+            longitude: 0
+        }
+    
+        return data;
+    }, 2000);
 }
 
 const data = geocode('Philadelphia');
