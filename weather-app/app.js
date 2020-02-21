@@ -43,7 +43,9 @@ const geocode = (address, callback) => {
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/` + encodeURIComponent(address) + `.json?access_token=${map_api_key}&limit=1`;
 
     request({ url: url, json: true, }, (error, response) => {
-
+        if (error) {
+            callback();
+        }
     });
 }
 
