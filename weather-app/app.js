@@ -53,5 +53,6 @@ const geocode = (address, callback) => {
 
 // example function call
 geocode('New York', (error, data) => {
-
+    console.log('Error', error);
+    console.log('Data');
 });
