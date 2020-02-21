@@ -37,3 +37,13 @@ const map_api_key = process.env.MAP_API_KEY;
 //     }
 // });
 
+
+// function definition
+const geocode = (address, callback) => {
+    
+}
+
+// example function call
+geocode('Philadelphia', (error, data) => {
+
+});
