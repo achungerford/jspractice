@@ -44,7 +44,7 @@ const geocode = (address, callback) => {
 
     request({ url: url, json: true, }, (error, response) => {
         if (error) {
-            callback();
+            callback('Unable to connect to location services!', undefined);
         }
     });
 }
