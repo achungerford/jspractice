@@ -6,7 +6,7 @@ require('dotenv').config();
 const weather_api_key = process.env.WEATHER_API_KEY;
 const map_api_key = process.env.MAP_API_KEY;
 
-// // Weather request: Lat/Long -> weather
+// Weather request: Lat/Long -> weather
 // const url = `https://api.darksky.net/forecast/${weather_api_key}/37.8267,-122.4233`;
 
 // // error handling
@@ -39,19 +39,25 @@ const map_api_key = process.env.MAP_API_KEY;
 
 // function definition
 const geocode = (address, callback) => {
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${map_api_key}&limit=1`;
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${map_api_key}`;
 
     request({ url: url, json: true}, (error, response) => {
         if (error) {
             callback('Unable to connect to location services!', undefined);
         } else if (response.body.features.length === 0) {
             callback('Unable to find location. Try another search.', undefined);
+        } else {
+            callback(undefined, {
+                longitude: response.body.features[0].center[0],
+                latitude: response.body.features[0].center[1],
+                location: response.body.features[0].place_name
+            });
         }
     });
 }
 
 // example function call
-geocode('New York', (error, data) => {
+geocode('Philadelphia', (error, data) => {
     console.log('Error', error);
     console.log('Data', data);
 });
