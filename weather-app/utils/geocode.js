@@ -1,7 +1,5 @@
 // npm modules
 const request = require('request');
-
-// modules for api
 require('dotenv').config();
 const map_api_key = process.env.MAP_API_KEY;
 
