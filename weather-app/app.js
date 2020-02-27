@@ -3,9 +3,6 @@ const geocode = require('./utils/geocode');
 const request = require('request');
 require('dotenv').config();
 
-// bring in API key from a .env file
-const weather_api_key = process.env.WEATHER_API_KEY;
-const map_api_key = process.env.MAP_API_KEY;
 
 // Weather request: Lat/Long -> weather
 // const url = `https://api.darksky.net/forecast/${weather_api_key}/37.8267,-122.4233`;
@@ -23,7 +20,24 @@ const map_api_key = process.env.MAP_API_KEY;
 
 
 // city -> latitude/longitude
-geocode('Kansas City', (error, data) => {
-    console.log('Error', error);
-    console.log('Data', data);
-});
+// geocode('Kansas City', (error, data) => {
+//     console.log('Error', error);
+//     console.log('Data', data);
+// });
+
+
+//
+// Goal: Create a reusable function for getting the forecast
+//
+// 1. Setup the "forecast" function in utils/forecast.js
+// 2. Require the function in app.js and call it as shown below
+// 3. The forecast function should have three potential calls to callback:
+//    - Low level error, pass string for error
+//    - Coordinate error, pass string for error
+//    - Success, pass forecast string for data (same format as from before)
+
+forecast(-75.7088, 44.1545, (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
+
