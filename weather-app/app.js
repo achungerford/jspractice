@@ -11,7 +11,7 @@ geocode('Kansas City', (error, data) => {
 });
 
 // longitude/latitude -> weather
-forecast(-75.7088, 44.1545, (error, data) => {
+forecast(-94.563, 39.0845, (error, data) => {
     console.log('Error:', error)
     console.log('Data:', data)
   });
