@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
     const url = `https://api.darksky.net/forecast/${weather_api_key}/${latitude},${longitude}`;
     
     request({ url: url, json: true }, (error, response) => {
-        if (erorr) {
+        if (error) {
             callback('Unable to connect to weather service!', undefined);
         } else if (response.body.error) {
             callback('Unable to find location.', undefined)

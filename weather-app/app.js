@@ -1,7 +1,7 @@
 // require the module we installed
+const request = require('request');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-const request = require('request');
 require('dotenv').config();
 
 
