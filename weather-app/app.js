@@ -4,13 +4,13 @@ const forecast = require('./utils/forecast');
 require('dotenv').config();
 
 // city -> longitude/latitude
-geocode('Kansas City', (error, data) => {
+geocode('Boston', (error, data) => {
     console.log('Error', error);
     console.log('Data', data);
+    
+    // longitude/latitude -> weather
+    forecast(data.latitude, data.longitude, (error, data) => {
+        console.log('Error:', error);
+        console.log('Data:', data);
+    });
 });
-
-// longitude/latitude -> weather
-forecast(39.0845, -94.563, (error, data) => {
-    console.log('Error:', error);
-    console.log('Data:', data);
-  });
