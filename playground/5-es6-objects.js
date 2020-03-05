@@ -21,9 +21,9 @@ const product = {
     qty: 201,
     salePrice: undefined 
 }
-
 // old way
 // const label = product.label;
+
 
 // es6 way - inside {}, list properties you want to extract
 // when destructuring, you can even include properties that don't yet exist on the object, like rating
@@ -32,6 +32,9 @@ const {label, qty, rating} = product;
 console.log(label);
 console.log(qty);
 console.log(rating); // stores undefined
+
+
+
 
 const inventory = {
     item: 'notebook',
@@ -46,3 +49,18 @@ const {item, price:retailPrice, stock} = inventory;
 console.log(item);
 console.log(retailPrice);
 console.log(stock);
+
+
+
+const equipment = {
+    machine: 'printer',
+    supply: 'ink',
+    color: 'black'
+}
+
+// set a default value for a property that doesn't yet exist
+const {supply, color, cost = 20} = equipment;
+
+console.log(supply);
+console.log(color);
+console.log(cost);
