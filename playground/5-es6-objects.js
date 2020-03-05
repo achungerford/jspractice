@@ -31,5 +31,6 @@ const {label, qty, rating} = product;
 
 console.log(label);
 console.log(qty);
+console.log(rating); // stores undefined
 
 // you can even destructure
