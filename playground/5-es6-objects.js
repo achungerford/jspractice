@@ -77,9 +77,9 @@ const product = {
     rating: 4.2
 }
 
-const transaction = (type, myProduct) => {
-    // destructuring
-    const { label } = myProduct;
+// destructuring right in the function declaration
+const transaction = (type, { label, qty }) => {
+    console.log(type, label, qty);
 }
 
 // using an object as 'myProduct'
