@@ -33,4 +33,16 @@ console.log(label);
 console.log(qty);
 console.log(rating); // stores undefined
 
-// you can even destructure
+const inventory = {
+    item: 'notebook',
+    price: 5,
+    stock: 100,
+    salePrice: undefined
+}
+
+// renaming your destructured variable: price -> retailPrice
+const {item, price:retailPrice, stock} = inventory;
+
+console.log(item);
+console.log(retailPrice);
+console.log(stock);
