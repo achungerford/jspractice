@@ -1,11 +1,9 @@
 /* Understanding what the 'request' package is doing by
 recreating one of our HTTP requests.
 */
-require('dotenv').config();
-
 
 const https = require('https');
-const url = `https://api.darksky.net/forecast/${weather_api_key}/40,-75`;
+const url = `www.someAPIurlHere.com`;
 
 // instead of response.body.etc like we get with the npm 'request' package,
 // we have to "listen" for each part of the HTTPS response to come in because
