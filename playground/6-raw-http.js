@@ -16,10 +16,15 @@ const url = `www.someURLhere.com`;
 
 https.request(url, (response) => {
 
+    // need somwhere to store our chunks (from below) until we have all of them
+    // and then we can parse it as JSON
+    let data = '';
+
     // response.on allows us to register a handler
     // event name = first argument = 'data' here
+    // the callback in here is going to execute when data comes in - 1x or multiple times
     response.on('data', (chunk) => {
-
+        console.log(chunk);
     });
 
     // figure out when we're done
