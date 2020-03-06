@@ -33,3 +33,6 @@ const request = https.request(url, (response) => {
 
     });
 });
+
+// how the program knows our request is complete
+request.end();
