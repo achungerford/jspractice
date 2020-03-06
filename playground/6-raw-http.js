@@ -14,7 +14,7 @@ const url = `www.someURLhere.com`;
 // must listen for each individual chunk to arrive
 // must listen for when all chunks have finally arrived
 
-https.request(url, (response) => {
+const request = https.request(url, (response) => {
 
     // need somwhere to store our chunks (from below) until we have all of them
     // and then we can parse it as JSON
