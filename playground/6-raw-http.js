@@ -3,7 +3,7 @@ recreating one of our HTTP requests.
 */
 
 const https = require('https');
-const url = `www.someURLhere.com`;
+const url = `https://api.darksky.net/forecast/${weather_api_key}/${latitude},${longitude}`;
 
 // instead of response.body.etc like we get with the npm 'request' package,
 // we have to "listen" for each part of the HTTPS response to come in because
