@@ -1,10 +1,10 @@
 /* Understanding what the 'request' package is doing by
 recreating one of our HTTP requests.
 */
-const weather_api_key = process.env.WEATHER_API_KEY;
 
 const https = require('https');
-const apiURL = `www.someAPIurlHere.com`;
+// still need to get this apiURL to work correctly
+const apiUrl = `https://api.darksky.net/forecast/${weather_api_key}/40,-75`;
 
 // instead of response.body.etc like we get with the npm 'request' package,
 // we have to "listen" for each part of the HTTPS response to come in because
@@ -22,8 +22,8 @@ const request = https.request(apiURL, (response) => {
     let data = '';
 
     // response.on allows us to register a handler
-    // event name = first argument = 'data' here
-    // the callback in here is going to execute when data comes in - 1x or multiple times
+    // event name = first argument, which is 'data' here
+    // the callback in here is going to execute when data comes in - one or multiple times
     response.on('data', (chunk) => {
         data = data + chunk.toString();
     });
@@ -36,5 +36,10 @@ const request = https.request(apiURL, (response) => {
     });
 });
 
-// how the program knows our request is complete
+// set up another listener for error handling
+request.on('error', (error) => {
+    console.log('an error occurred', error);
+});
+
+// by calling end() the program knows we're done setting up our request and sends it off
 request.end();
