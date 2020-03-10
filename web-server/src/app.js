@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
     res.send('Hello Express!');     // displays in browser
 });
 
+app.get('/help', (req, res) => {
+    res.send('Help page');     // displays in browser
+});
+
 // code to start server - port 3000 is common development port
 app.listen(3000, () => {
     console.log('Server is up on port 3000');   // never displays in browser
