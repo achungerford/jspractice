@@ -27,8 +27,10 @@ single Express server, but we'll have multiple routes set up.
 // req is an object that contains info about the incoming request to the server
 
 app.get('/', (req, res) => {
-    res.send('Hello Express!');
+    res.send('Hello Express!');     // displays in browser
 });
 
 // code to start server - port 3000 is common development port
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Server is up on port 3000');   // never displays in browser
+});
