@@ -5,8 +5,11 @@ run script: node src/app.js
 keep server running: nodemon src/app.js
 */
 
+// need the absolute path to index.html
 // load in library, store application to variable
 const express = require('express');
+console.log(__dirname);
+console.log(__filename);
 const app = express();
 
 /*
