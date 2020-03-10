@@ -26,12 +26,19 @@ single Express server, but we'll have multiple routes set up.
 // set up server to send a response when someone tries to get something at a specific route
 // req is an object that contains info about the incoming request to the server
 
+// create root page
 app.get('/', (req, res) => {
     res.send('Hello Express!');     // displays in browser
 });
 
+// create a help page
 app.get('/help', (req, res) => {
     res.send('Help page');     // displays in browser
+});
+
+// create an about page
+app.get('/about', (req, res) => {
+    res.send('About page');     // displays in browser
 });
 
 // code to start server - port 3000 is common development port
@@ -39,5 +46,5 @@ app.listen(3000, () => {
     console.log('Server is up on port 3000');   // never displays in browser
 });
 
-
 // run script: node src/app.js
+// keep server running: nodemon src/app.js
