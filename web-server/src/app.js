@@ -12,3 +12,8 @@ const express = require('express');
 
 // variable to store our express application. Express only exposes a single function.
 const app = express();
+
+/* express() doesn't take any arguments.
+We configure our server using *methods* provided on the application itself.
+*/
+
