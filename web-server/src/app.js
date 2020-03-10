@@ -23,10 +23,11 @@ app.get('/', (req, res) => {
 
 // create a help route
 app.get('/help', (req, res) => {
-    res.send({
-        name: 'Obama',
-        president: 44
-    });
+    res.send([
+        {name: 'Obama'},
+        {name: 'Bush'},
+        {name: 'Clinton'}
+    ]);
 });
 
 // create an about route
