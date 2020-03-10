@@ -7,3 +7,5 @@ and then start the server
 This script is the starting point to our node applicatoin.
 */
 
+// load in library
+const express = require('express');
