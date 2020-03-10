@@ -18,7 +18,7 @@ weather route (app.com/weather)
 
 // create root route
 app.get('/', (req, res) => {
-    res.send('Hello Express!');
+    res.send('<h1>Weather</h1>');
 });
 
 // create a help route
