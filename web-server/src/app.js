@@ -31,14 +31,19 @@ app.get('/', (req, res) => {
     res.send('Hello Express!');     // displays in browser
 });
 
-// create a help page
+// create a help route
 app.get('/help', (req, res) => {
     res.send('Help page');     // displays in browser
 });
 
-// create an about page
+// create an about route
 app.get('/about', (req, res) => {
     res.send('About page');     // displays in browser
+});
+
+// create a weather route
+app.get('/weather', (req, res) => {
+    res.send('Weather page');     // displays in browser
 });
 
 // code to start server - port 3000 is common development port
