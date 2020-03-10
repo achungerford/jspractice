@@ -27,5 +27,5 @@ single Express server, but we'll have multiple routes set up.
 // req is an object that contains info about the incoming request to the server
 
 app.get('/', (req, res) => {
-
+    res.send('Hello Express!');
 });
