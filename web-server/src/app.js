@@ -15,5 +15,10 @@ const app = express();
 
 /* express() doesn't take any arguments.
 We configure our server using *methods* provided on the application itself.
-*/
 
+Imagine we have a single domain 'app.com' and all of it is going to run on a
+single Express server, but we'll have multiple routes set up.
+-- root route (app.com)
+-- slash help (app.com/help)
+-- slash about (app.com/about)
+*/
