@@ -22,3 +22,10 @@ single Express server, but we'll have multiple routes set up.
 -- slash help (app.com/help)
 -- slash about (app.com/about)
 */
+
+// set up server to send a response when someone tries to get something at a specific route
+// req is an object that contains info about the incoming request to the server
+
+app.get('/', (req, res) => {
+
+});
