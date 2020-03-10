@@ -24,20 +24,23 @@ app.get('/', (req, res) => {
 // create a help route
 app.get('/help', (req, res) => {
     res.send([
-        {name: 'Obama'},
-        {name: 'Bush'},
-        {name: 'Clinton'}
+        {name: 'Barack H. Obama'},
+        {name: 'George W. Bush'},
+        {name: 'Bill Clinton'}
     ]);
 });
 
 // create an about route
 app.get('/about', (req, res) => {
-    res.send('About page');
+    res.send('<h1>About</h1>');
 });
 
 // create a weather route
 app.get('/weather', (req, res) => {
-    res.send('Weather page');
+    res.send({
+        forecast: 'rain',
+        location: 'Los Angeles'
+    });
 });
 
 // port 3000 is common development port, starts server
