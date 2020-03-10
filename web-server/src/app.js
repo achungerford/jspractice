@@ -9,3 +9,6 @@ This script is the starting point to our node applicatoin.
 
 // load in library
 const express = require('express');
+
+// variable to store our express application. Express only exposes a single function.
+const app = express();
