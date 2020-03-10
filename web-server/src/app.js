@@ -29,3 +29,6 @@ single Express server, but we'll have multiple routes set up.
 app.get('/', (req, res) => {
     res.send('Hello Express!');
 });
+
+// code to start server - port 3000 is common development port
+app.listen(3000);
