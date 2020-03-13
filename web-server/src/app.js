@@ -9,14 +9,12 @@ keep server running: nodemon src/app.js
 const path = require('path');
 const express = require('express');
 
-console.log(__dirname);
-console.log(path.join(__dirname, '../public'));
-
 // create express app
 const app = express();
+const publicDirectoryPath = path.join(__dirname, '../public');
 
 // serve up directory
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(publicDirectoryPath));
 
 /*
 root route (app.com)
