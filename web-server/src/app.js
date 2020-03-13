@@ -5,13 +5,18 @@ run script: node src/app.js
 keep server running: nodemon src/app.js
 */
 
-// need the absolute path to index.html
-// load in library, store application to variable
+// need the absolute path to index.html;  load in library, store application to variable
 const path = require('path');
 const express = require('express');
+
 console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
+
+// create express app
 const app = express();
+
+// serve up directory
+app.use(express.static(path.join(__dirname, '../public')))
 
 /*
 root route (app.com)
