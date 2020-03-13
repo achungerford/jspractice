@@ -1,27 +1,17 @@
-/* creating our nodejs script that will
-create, configure, and start up the server.
+/* nodejs script that will create, configure, and start the server.
 
 run script: node src/app.js
 keep server running: nodemon src/app.js
 */
 
-// need the absolute path to index.html;  load in library, store application to variable
 const path = require('path');
 const express = require('express');
 
-// create express app
 const app = express();
-const publicDirectoryPath = path.join(__dirname, '../public');
+const publicDirectoryPath = path.join(__dirname, '../public'); // abs path to serve
 
-// serve up directory
-app.use(express.static(publicDirectoryPath));
 
-/*
-root route (app.com)
-help route (app.com/help)
-about route (app.com/about)
-weather route (app.com/weather)
-*/
+app.use(express.static(publicDirectoryPath)); // serve 'public' directory
 
 // create root route
 app.get('/', (req, res) => {
@@ -33,7 +23,7 @@ app.get('/help', (req, res) => {
     res.send([
         {name: 'Barack H. Obama'},
         {name: 'George W. Bush'},
-        {name: 'Bill Clinton'}
+        {name: 'William J. Clinton'}
     ]);
 });
 
