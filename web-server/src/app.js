@@ -7,16 +7,11 @@ keep server running: nodemon src/app.js
 const path = require('path');
 const express = require('express');
 
-const app = express();
-const publicDirectoryPath = path.join(__dirname, '../public'); // abs path to serve
+const app = express();  // create app
+const publicDirectoryPath = path.join(__dirname, '../public');  // absolute path to 'public' directory
 
-
-app.use(express.static(publicDirectoryPath)); // serve 'public' directory
-
-// create root route
-app.get('/', (req, res) => {
-    res.send('<h1>Weather</h1>');
-});
+// serve 'public' directory
+app.use(express.static(publicDirectoryPath));
 
 // create a help route
 app.get('/help', (req, res) => {
