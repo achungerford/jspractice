@@ -10,6 +10,9 @@ const express = require('express');
 const app = express();  // create app
 const publicDirectoryPath = path.join(__dirname, '../public');  // absolute path to 'public' directory
 
+// tells express which templating engine we installed (hbs)
+app.set('view engine', 'hbs');
+
 // serve 'public' directory
 app.use(express.static(publicDirectoryPath));
 
