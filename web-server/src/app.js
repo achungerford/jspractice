@@ -15,10 +15,26 @@ app.set('view engine', 'hbs');
 // serve 'public' directory
 app.use(express.static(publicDirectoryPath));
 
-// set up route to serve up views template, render one of our views
+// set up route to serve up views template, render index.hbs view
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather App',
+        title: 'Weather',
+        name: 'John Doe'
+    })
+});
+
+// render about.hbs view
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'About Me',
+        name: 'John Doe'
+    })
+});
+
+// render help view
+app.get('/help', (req, res) => {
+    res.render('help', {
+        title: 'Help',
         name: 'John Doe'
     })
 });
