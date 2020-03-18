@@ -17,7 +17,10 @@ app.use(express.static(publicDirectoryPath));
 
 // set up route to serve up views template, render one of our views
 app.get('', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Weather App',
+        name: 'John Doe'
+    })
 });
 
 
