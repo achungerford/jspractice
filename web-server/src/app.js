@@ -12,9 +12,14 @@ const publicDirectoryPath = path.join(__dirname, '../public');  // absolute path
 
 // tells express which templating engine we installed (hbs)
 app.set('view engine', 'hbs');
-
 // serve 'public' directory
 app.use(express.static(publicDirectoryPath));
+
+// set up route to serve up views template, render one of our views
+app.get('', (req, res) => {
+    res.render('index')
+});
+
 
 // create a weather route
 app.get('/weather', (req, res) => {
