@@ -6,6 +6,8 @@ keep server running: nodemon src/app.js
 
 const path = require('path');
 const express = require('express');
+const hbs = require('hbs');
+
 const app = express();  // create app
 
 // Define paths for Express config
