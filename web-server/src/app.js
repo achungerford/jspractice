@@ -6,14 +6,17 @@ keep server running: nodemon src/app.js
 
 const path = require('path');
 const express = require('express');
-
 const app = express();  // create app
+
+// Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');  // absolute path to 'public' directory
 const viewsPath = path.join(__dirname, '../templates');          // customizing where your 'views' live, i.e. changing the default
 
+// Setup handlebars engine and views location
 app.set('view engine', 'hbs');      // tells express which templating engine we installed (hbs)
 app.set('views', viewsPath);        // telling express to use viewsPath (templates)
 
+// Setup static directory to serve
 app.use(express.static(publicDirectoryPath));   // serve 'public' directory
 
 // set up route to serve up views template, render index.hbs view
