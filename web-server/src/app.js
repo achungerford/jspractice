@@ -10,11 +10,13 @@ const app = express();  // create app
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');  // absolute path to 'public' directory
-const viewsPath = path.join(__dirname, '../templates/views');          // customizing where your 'views' live, i.e. changing the default
+const viewsPath = path.join(__dirname, '../templates/views');   // customizing where your 'views' live, i.e. changing the default
+const partialsPath = path.join(__dirname, '../templates/partials'); // absolute path to partials
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs');      // tells express which templating engine we installed (hbs)
 app.set('views', viewsPath);        // telling express to use viewsPath (templates)
+hbs.registerPartials(partialsPath);     // config rendering of partials
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));   // serve 'public' directory
