@@ -56,7 +56,13 @@ app.get('/weather', (req, res) => {
     });
 });
 
+// 404 handling all URLs after /help/
+app.get('/help/*', (req, res) => {
+    res.send('Help article not found.');
+});
+
 // 404 handling: * is a wildcard meaning match anything that hasn't been matced yet
+// app.get * needs to come AFTER all other requests bc your app looks through routes in order
 app.get('*', (req, res) => {
     res.send('My 404 Page');
 });
