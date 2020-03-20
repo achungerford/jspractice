@@ -48,13 +48,17 @@ app.get('/help', (req, res) => {
     })
 });
 
-
 // create a weather route
 app.get('/weather', (req, res) => {
     res.send({
         forecast: 'rain',
         location: 'Los Angeles'
     });
+});
+
+// 404 handling: * is a wildcard meaning match anything that hasn't been matced yet
+app.get('*', (req, res) => {
+    res.send('My 404 Page');
 });
 
 // port 3000 is common development port, starts server
