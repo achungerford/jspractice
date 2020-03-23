@@ -9,9 +9,11 @@
     <title>Document</title>
 </head>
 <body>
-    {{!-- render a partial, don't need extension --}}
-    {{>header}}
-    <p>Just want to say {{helpText}}</p>
+    <div class="main-element">
+        {{>header}}
+        <p>Just want to say {{helpText}}</p>
+    </div>
+    
     {{>footer}}
 </body>
 </html>
