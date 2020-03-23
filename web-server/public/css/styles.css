@@ -6,11 +6,6 @@ body {
     padding: 0 16px;
 }
 
-body img {
-    width: 650px;
-    max-height: auto;
-}
-
 footer {
     color: #888888;
     border-top: 1px solid #eeeeee;
@@ -33,4 +28,8 @@ header a {
     color: #888888;
     margin-right: 16px;
     text-decoration: none;
+}
+
+.portrait {
+    width: 250px;
 }
