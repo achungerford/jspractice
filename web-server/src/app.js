@@ -51,14 +51,33 @@ app.get('/help', (req, res) => {
 
 // create a weather route
 app.get('/weather', (req, res) => {
+    // ensure user provides an address
+    if (!req.query.address) {
+        return res.send({
+            error: 'You must provide an address',
+        });
+    }
+    
     res.send({
         forecast: 'rain',
-        location: 'Los Angeles'
+        location: 'Los Angeles',
+        address: req.query.address
     });
 });
 
 // create URL that sends back JSON
 app.get('/products', (req, res) => {
+    // API request from browser to server
+    // require 'search'
+    if (!req.query.search) {
+        return res.send({
+            error: 'You must provide a search term.'
+        });
+    }
+
+    console.log(req.query.search);
+
+    // responses from server with data after API request
     res.send({
         products: []
     });
