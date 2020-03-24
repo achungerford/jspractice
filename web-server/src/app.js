@@ -24,6 +24,7 @@ hbs.registerPartials(partialsPath);     // config rendering of partials
 app.use(express.static(publicDirectoryPath));   // serve 'public' directory
 
 // set up route to serve up views template, render index.hbs view
+// (routes are part of Express pkg)
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
@@ -55,6 +56,14 @@ app.get('/weather', (req, res) => {
         location: 'Los Angeles'
     });
 });
+
+// create URL that sends back JSON
+app.get('/products', (req, res) => {
+    res.send({
+        products: []
+    });
+})
+
 
 // 404 help handling
 app.get('/help/*', (req, res) => {
