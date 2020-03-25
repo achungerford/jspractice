@@ -60,8 +60,8 @@ app.get('/weather', (req, res) => {
         });
     }
     
-    // use the address to geocode
-    geocode(req.query.address, (error, { latitude, longitude, location } ) => {
+    // wired up endpoint, empty object default value
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error });
         }

@@ -1,5 +1,4 @@
-// Object property shorthand can be used when
-// the value of a property in an object comes from
+// Object property shorthand can be used when the value of a property in an object comes from
 //  a variable of the same name as the property
 
 const name = 'John';
