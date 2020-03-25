@@ -5,8 +5,14 @@ console.log('Client-side javascript file is loaded.');
 
 // since this script is running in client-side JS, using the Fetch API is fine here
 
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
+// using the Fetch API
+fetch('http://localhost:3000/weather?address=Los%20Angeles').then((response) => {
     response.json().then((data) => {
-        console.log(data);
+        if (data.error) {
+            console.log(data.error);
+        } else {
+            console.log(data.location);
+            console.log(data.forecast);
+        }
     });
 });
