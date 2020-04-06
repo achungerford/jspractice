@@ -16,3 +16,13 @@ fetch('http://localhost:3000/weather?address=Los%20Angeles').then((response) => 
         }
     });
 });
+
+// wire up the search form
+const weatherForm = document.querySelector('form');
+
+// code to run when form submitted
+weatherForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    console.log('testing');
+});
