@@ -2,9 +2,7 @@ console.log('Client-side javascript file is loaded.');
 
 // this code can't be used in a back-end node script
 // the 'Fetch API' is not part of javascript. It is a browser-based API for modern browsers.
-
 // since this script is running in client-side JS, using the Fetch API is fine here
-
 
 // wire up the search form
 const weatherForm = document.querySelector('form');
