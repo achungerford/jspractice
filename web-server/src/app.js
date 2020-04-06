@@ -56,7 +56,7 @@ app.get('/weather', (req, res) => {
     // ensure user provides an address
     if (!req.query.address) {
         return res.send({
-            error: 'You must provide an address',
+            error: 'You must provide an address!',
         });
     }
     
@@ -87,7 +87,7 @@ app.get('/products', (req, res) => {
     // require 'search'
     if (!req.query.search) {
         return res.send({
-            error: 'You must provide a search term.'
+            error: 'You must provide a search term!'
         });
     }
 
