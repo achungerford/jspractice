@@ -6,7 +6,7 @@ console.log('Client-side javascript file is loaded.');
 // since this script is running in client-side JS, using the Fetch API is fine here
 
 // using the Fetch API
-fetch('http://localhost:3000/weather?address=Los%20Angeles').then((response) => {
+fetch('http://localhost:3000/weather?address=!').then((response) => {
     response.json().then((data) => {
         if (data.error) {
             console.log(data.error);
@@ -19,10 +19,13 @@ fetch('http://localhost:3000/weather?address=Los%20Angeles').then((response) => 
 
 // wire up the search form
 const weatherForm = document.querySelector('form');
+const search = document.querySelector('input');
 
 // code to run when form submitted
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    console.log('testing');
+
+    const location = search.value;
+        
+    console.log(location);
 });
