@@ -24,11 +24,10 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('http://localhost:3000/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                // render error
                 messageOne.textContent = data.error
             } else {
-                messageOne = data.location;
-                messageTwo = data.forecast;
+                messageOne.textContent = data.location
+                messageTwo.textContent = data.forecast
             }
         });
     });
