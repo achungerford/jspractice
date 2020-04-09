@@ -121,5 +121,5 @@ app.get('*', (req, res) => {
 
 // 'port' found above for Heroku deployment
 app.listen(port, () => {
-    console.log('Server is up on port' + port);   // never displays in browser
+    console.log('Server is up on port ' + port);   // never displays in browser
 });
